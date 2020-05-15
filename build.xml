@@ -10,14 +10,6 @@
 			value="${basedir}/src"/>
 
 	<property
-			name="test-dir"
-			value="${basedir}/test"/>
-
-	<property
-			name="test-log-dir"
-			value="${basedir}/testlog/"/>
-
-	<property
 			name="target-dir"
 			value="${basedir}/target"/>
 
@@ -25,9 +17,6 @@
 			name="dist-jar"
 			value="${basedir}/dist/bot.jar"/>
 
-	<property
-			name="test"
-			value="all"/>
 
 	<target name="check-dependencies">
 		<available file="${target-dir}/dependency" type="dir" property="dependencies.present"/>
@@ -42,20 +31,6 @@
 	<target name="run" depends="download-dependencies">
 		<java classname="kawa.repl" spawn="true" fork="true">
 			<arg line="${src-dir}/main.scm"/>
-			<classpath>
-				<path>
-					<fileset dir="${target-dir}/dependency" includes="*.jar" />
-				</path>
-				<pathelement location="${kawa-jar}"/>
-			</classpath>
-		</java>
-	</target>
-
-	<target name="test" depends="download-dependencies">
-		<mkdir dir="${test-log-dir}"/>
-		<java classname="kawa.repl" fork="true" dir="${test-log-dir}">
-			<arg line="${test-dir}/${test}.scm"/>
-			<jvmarg line="-Dkawa.import.path=${src-dir}"/>
 			<classpath>
 				<path>
 					<fileset dir="${target-dir}/dependency" includes="*.jar" />
@@ -91,7 +66,6 @@
 	<target name="clean">
 		<delete dir="${target-dir}"/>
 		<delete file="${dist-jar}"/>
-		<delete dir="${test-log-dir}"/>
 	</target>
 
 </project>

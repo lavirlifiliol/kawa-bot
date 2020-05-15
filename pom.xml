@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- change it -->
-	<groupId>arvyy.kawa</groupId>
-	<artifactId>libgdx-kawa-starter</artifactId>
+	<groupId>lakmatiol.kawabot</groupId>
+	<artifactId>kawa-bot</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>libGDX Kawa starter</name>
+	<name>Kawa bot</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
 		<repository>
