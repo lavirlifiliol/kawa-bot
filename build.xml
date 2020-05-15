@@ -3,7 +3,7 @@
 	<!-- change it -->
 	<property 
 			name="kawa-jar"
-			value="/opt/kawa/kawa-3.1/lib/kawa.jar"/>
+			value="/home/adam/kawa/kawa-3.1/lib/kawa.jar"/>
 
 	<property
 			name="src-dir"
@@ -23,7 +23,7 @@
 
 	<property
 			name="dist-jar"
-			value="${basedir}/dist/game.jar"/>
+			value="${basedir}/dist/bot.jar"/>
 
 	<property
 			name="test"
