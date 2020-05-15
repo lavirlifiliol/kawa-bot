@@ -3,7 +3,7 @@
 	<!-- change it -->
 	<property 
 			name="kawa-jar"
-			value="/home/adam/kawa/kawa-3.1/lib/kawa.jar"/>
+			value="/home/adam/kawa/kawa-3.1.1/lib/kawa.jar"/>
 
 	<property
 			name="src-dir"
@@ -67,13 +67,13 @@
 
 	<target name="compile" depends="download-dependencies">
 		<java classname="kawa.repl" fork="true" dir="${src-dir}">
-			<arg line="-d ${target-dir}/dist -C main.scm"/>
 			<classpath>
 				<path>
 					<fileset dir="${target-dir}/dependency" includes="*.jar" />
 				</path>
 				<pathelement location="${kawa-jar}"/>
 			</classpath>
+			<arg line="-d ${target-dir}/dist -C main.scm"/>
 		</java>
 
 		<jar jarfile="${dist-jar}" basedir="${target-dir}/dist">
